@@ -235,8 +235,12 @@ function getPathName(){
             break;            
         case "companyDetails":
             companyDetailsAjax();
+            break;
         case "freelancerList":
             freelancerList();
+            break;
+        case "partnerList":
+            partnerList();
             break;
     }
 })();
@@ -2630,6 +2634,40 @@ function toggleActiveAffiliate(affiliateId) {
         }
     });
 
+}
+
+function toggleActiveCompany(companyId) {
+
+    alertify.confirm(text290, function (e) {
+        if (e) {
+            $.ajax({
+                url: "toggleActiveCompany.html",
+                data: {companyId: companyId},
+                beforeSend: function (xhr) {
+                    $.isLoading({text: loader, position: "overlay"})                        
+                },success: function (data, textStatus, jqXHR) {
+                    companiesListAjax();
+                }, error: function (jqXHR, textStatus, errorThrown) {
+                    showError();
+                },complete: function (jqXHR, textStatus) {
+                    $.isLoading("hide");
+                }
+            });
+        }
+    });
+
+}
+
+function partnerList(){    
+    $("#output").html(loader);    
+    $.ajax({
+        url:"partnerTable.html",
+        success: function (data, textStatus, jqXHR) {
+            $("#output").html(data);    
+        },error: function (jqXHR, textStatus, errorThrown) {
+            showError();
+        }        
+    });
 }
 
 

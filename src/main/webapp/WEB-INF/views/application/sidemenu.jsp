@@ -31,7 +31,7 @@
                     </li>                    
                 </ul>                
             </li>
-            <li>
+            <!--<li>
                 <a href="createNewAffiliate.html">
                     <spring:message code="text147" />
                 </a>
@@ -40,7 +40,7 @@
                 <a href="createNewCompanyAffiliate.html">
                     <spring:message code="text163" />
                 </a>
-            </li>
+            </li>-->
             <li>
                 <a href="affiliatesList.html">
                     <spring:message code="text155" />
@@ -54,6 +54,11 @@
             <li>
                 <a href="freelancerList.html">                    
                     <spring:message code="text349" />
+                </a>
+            </li>
+            <li>
+                <a href="partnerList.html">                    
+                    <spring:message code="text362" />
                 </a>
             </li>
         </ul>

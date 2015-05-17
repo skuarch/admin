@@ -43,6 +43,18 @@
                                         ${c.getRegistrationDate()}
                                     </td>        
                                     <td>
+                                        <c:choose>
+                                            <c:when test="${c.getActive() == 0}">                                                
+                                                <button class="btn btn-success" onclick="toggleActiveCompany(${c.getId()})">
+                                                    <spring:message code="text360" />
+                                                </button>                                                
+                                            </c:when>
+                                            <c:otherwise>                                                
+                                                <button class="btn btn-default" onclick="toggleActiveCompany(${c.getId()})">
+                                                    <spring:message code="text361" />
+                                                </button>                                                
+                                            </c:otherwise>   
+                                        </c:choose>
                                         <button class="btn btn-primary" onclick="javascript:redirectData('redirector.html', {url:'createEstablishment.html', companyId:${c.getId()}, type: <c:out value="${cons.getCompany()}"/> })">
                                             <spring:message code="text234" />
                                         </button>

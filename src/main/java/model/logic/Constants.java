@@ -17,7 +17,7 @@ public class Constants {
     public static final String PATH_UPLOADS_TMP = "/opt/freelancer/uploads/";
     public static final int CONNECTION_TIMEOUT = 2000;
     public static final int READ_TIMEOUT = 2000;
-    public static final int MAX_FILE_SIZE_UPLOAD = 5242880; // 5 mb
+    public static final int MAX_FILE_SIZE_UPLOAD = 1048576; // 1 mb
     
     public static final String API_URL = "http://localhost/api-rec";
     public static final String API_FIRST_VERSION = "/v1";
@@ -36,6 +36,7 @@ public class Constants {
     
     public static final String URI_PARTNER_AFFILIATE_AUTHENTICATION = "/authentication/partner/affiliate";
     public static final String URI_PARTNER_UPDATE_PASSWORD = "/partner/update/password";
+    public static final String URI_PARTNER_GET_LIST = "/partner/get/list";           
     
     public static final String URI_AFFILIATE_CREATE = "/affiliate/create";
     public static final String URI_AFFILIATE_CREATE_ESTABLISHMENT = "/affiliate/create/establishment";
@@ -72,6 +73,7 @@ public class Constants {
     public static final String URI_COMPANY_UPDATE_BANK_INFORMATION = "/company/update/bank/information";
     public static final String URI_COMPANY_UPDATE_PASSWORD = "/company/update/password";
     public static final String URI_COMPANY_GET_LIST = "/company/get/list";
+    public static final String URI_COMPANY_TOGGLE_ACTIVE = "/company/toggle/active";    
 
     public static short getAFFILIATE() {
         return AFFILIATE;

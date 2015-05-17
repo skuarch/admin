@@ -8,6 +8,7 @@
 /home/skuarch-lap/NetBeansProjects/admin/src/main/java/controllers/application/TestNotificationsForm.java
 /home/skuarch-lap/NetBeansProjects/admin/src/main/java/controllers/application/CloseSession.java
 /home/skuarch-lap/NetBeansProjects/admin/src/main/java/controllers/establishment/CreateEstablishment.java
+/home/skuarch-lap/NetBeansProjects/admin/src/main/java/controllers/partner/PartnerList.java
 /home/skuarch-lap/NetBeansProjects/admin/src/main/java/controllers/application/Error404.java
 /home/skuarch-lap/NetBeansProjects/admin/src/main/java/controllers/application/NoScript.java
 /home/skuarch-lap/NetBeansProjects/admin/src/main/java/controllers/freelancer/CreateFreelancer.java
@@ -93,9 +94,11 @@
 /home/skuarch-lap/NetBeansProjects/admin/src/main/java/controllers/company/CompanyList.java
 /home/skuarch-lap/NetBeansProjects/admin/src/main/java/controllers/freelancer/ToggleActiveFreelancer.java
 /home/skuarch-lap/NetBeansProjects/admin/src/main/java/controllers/freelancer/FreelancerTable.java
+/home/skuarch-lap/NetBeansProjects/admin/src/main/java/controllers/company/ToggleActiveCompany.java
 /home/skuarch-lap/NetBeansProjects/admin/src/main/java/controllers/application/UpdatePasswordProcess.java
 /home/skuarch-lap/NetBeansProjects/admin/src/main/java/model/util/AffiliateUtil.java
 /home/skuarch-lap/NetBeansProjects/admin/src/main/java/controllers/affiliate/AffiliateDetails.java
+/home/skuarch-lap/NetBeansProjects/admin/src/main/java/controllers/partner/PartnerTable.java
 /home/skuarch-lap/NetBeansProjects/admin/src/main/java/model/logic/Constants.java
 /home/skuarch-lap/NetBeansProjects/admin/src/main/java/model/beans/Responsable.java
 /home/skuarch-lap/NetBeansProjects/admin/src/main/java/controllers/application/Logout.java

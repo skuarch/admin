@@ -1,4 +1,5 @@
 controllers/establishment/CreateEstablishment.class
+controllers/partner/PartnerList.class
 controllers/affiliate/ToggleActiveAffiliate.class
 controllers/application/TestNotification.class
 controllers/freelancer/ToggleActiveFreelancer.class
@@ -90,11 +91,13 @@ controllers/cashier/UpdatePasswordCashierProcess.class
 controllers/company/CreateNewCompanyProcess.class
 controllers/establishment/CreateEstablishmentProccess.class
 controllers/affiliate/AffiliateList.class
+controllers/company/ToggleActiveCompany.class
 model/beans/Category.class
 model/beans/Affiliate.class
 controllers/affiliate/CreateNewAffiliateProcess.class
 controllers/cashier/CreateCashierFormProccess.class
 controllers/affiliate/UpdateAffiliateBankInformationProcess.class
+controllers/partner/PartnerTable.class
 model/beans/EstablishmentType.class
 controllers/establishment/EstablishmentDetailsForm.class
 controllers/freelancer/UpdateFreelancerProcess.class

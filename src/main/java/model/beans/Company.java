@@ -30,6 +30,7 @@ public class Company implements Serializable {
     private List<Establishment> establishment;
     private List<Category> category = new ArrayList<>();
     private String registrationDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
+    private byte active = 0;
 
     private byte isSoftDeleted = 0;
 
@@ -183,6 +184,14 @@ public class Company implements Serializable {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public byte getActive() {
+        return active;
+    }
+
+    public void setActive(byte active) {
+        this.active = active;
     }
 
 }
