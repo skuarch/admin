@@ -74,6 +74,8 @@ public class Constants {
     public static final String URI_COMPANY_UPDATE_PASSWORD = "/company/update/password";
     public static final String URI_COMPANY_GET_LIST = "/company/get/list";
     public static final String URI_COMPANY_TOGGLE_ACTIVE = "/company/toggle/active";    
+    
+    public static final String URI_TRANSFER_GET_LIST = "/transfer/get/list";
 
     public static short getAFFILIATE() {
         return AFFILIATE;

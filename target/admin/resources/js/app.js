@@ -241,6 +241,8 @@ function getPathName(){
             break;
         case "partnerList":
             partnerList();
+        case "transferList":
+            transferList();
             break;
     }
 })();
@@ -2668,6 +2670,18 @@ function partnerList(){
             showError();
         }        
     });
+}
+
+function transferList(){
+    $("#output").html(loader);    
+    $.ajax({
+        url:"transferTable.html",
+        success: function (data, textStatus, jqXHR) {
+            $("#output").html(data);    
+        },error: function (jqXHR, textStatus, errorThrown) {
+            showError();
+        }        
+    });    
 }
 
 

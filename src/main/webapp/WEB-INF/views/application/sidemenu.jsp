@@ -61,6 +61,11 @@
                     <spring:message code="text362" />
                 </a>
             </li>
+            <li>
+                <a href="transferList.html">                    
+                    <spring:message code="text363" />
+                </a>
+            </li>
         </ul>
     </div>
     <!-- /.sidebar-collapse -->
