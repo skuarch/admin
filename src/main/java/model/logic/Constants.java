@@ -19,7 +19,7 @@ public class Constants {
     public static final int READ_TIMEOUT = 2000;
     public static final int MAX_FILE_SIZE_UPLOAD = 1048576; // 1 mb
     
-    public static final String API_URL = "http://localhost/api-rec";
+    public static final String API_URL = "https://localhost/api-rec";
     public static final String API_FIRST_VERSION = "/v1";
     public static final String URI_AUTHENTICATION = "/authentication";
     
@@ -64,6 +64,8 @@ public class Constants {
     public static final String URI_CASHIER_UPDATE = "/cashier/update"; 
     public static final String URI_CASHIER_UPDATE_PASSWORD = "/cashier/update/password";     
     public static final String URI_CASHIER_CREATE = "/cashier/create";     
+    public static final String URI_CASHIER_GET_LIST = "/cashier/get/list";     
+    public static final String URI_CASHIER_TOGGLE_ACTIVE = "/cashier/toggle/active";    
     
     public static final String URI_COMPANY_GET = "/company/get";   
     public static final String URI_COMPANY_CREATE = "/company/create";   
@@ -76,6 +78,10 @@ public class Constants {
     public static final String URI_COMPANY_TOGGLE_ACTIVE = "/company/toggle/active";    
     
     public static final String URI_TRANSFER_GET_LIST = "/transfer/get/list";
+    
+    public static final String URI_PAYMENT_GET_LIST = "/payment/get/list";
+    
+    public static final String URI_SECRET_GET_LIST = "/secret/get/list";
 
     public static short getAFFILIATE() {
         return AFFILIATE;

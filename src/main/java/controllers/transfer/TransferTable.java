@@ -4,7 +4,6 @@ import com.google.gson.Gson;
 import controllers.application.BaseController;
 import java.util.HashMap;
 import java.util.Locale;
-import model.beans.Partner;
 import model.beans.Transfer;
 import model.logic.Constants;
 import model.logic.RestPostClient;

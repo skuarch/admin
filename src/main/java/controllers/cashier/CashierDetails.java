@@ -44,7 +44,7 @@ public class CashierDetails extends BaseController{
             json = RestPostClient.sendReceive(parameters, 
                     Constants.API_URL, 
                     Constants.API_FIRST_VERSION, 
-                    Constants.URI_CASHIER_GET);
+                    Constants.URI_CASHIER_GET);System.out.println("chaa " + json);
             cashier = new Gson().fromJson(json, Cashier.class);
             mav.addObject("cashier", cashier);            
             

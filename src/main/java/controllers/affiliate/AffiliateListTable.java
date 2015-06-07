@@ -53,7 +53,7 @@ public class AffiliateListTable extends BaseController {
                     Constants.API_FIRST_VERSION,
                     Constants.URI_AFFILIATE_GET_LIST
             );
-
+            
             affiliates = new Gson().fromJson(json, Affiliate[].class);
             mav.addObject("affiliates", affiliates);
 

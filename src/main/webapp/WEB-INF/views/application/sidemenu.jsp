@@ -66,6 +66,21 @@
                     <spring:message code="text363" />
                 </a>
             </li>
+            <li>
+                <a href="paymentList.html">                    
+                    <spring:message code="text364" />
+                </a>
+            </li>
+            <li>
+                <a href="cashierList.html">                    
+                    <spring:message code="text365" />
+                </a>
+            </li>
+            <li>
+                <a href="secretList.html">                    
+                    <spring:message code="text366" />
+                </a>
+            </li>
         </ul>
     </div>
     <!-- /.sidebar-collapse -->

@@ -47,6 +47,7 @@ public class PartnerTable extends BaseController {
                     Constants.URI_PARTNER_GET_LIST
             );
             
+            
             partners = new Gson().fromJson(json, Partner[].class);            
             mav = new ModelAndView("partner/partnerTable");
             mav.addObject("partners", partners);

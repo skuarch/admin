@@ -241,8 +241,18 @@ function getPathName(){
             break;
         case "partnerList":
             partnerList();
+            break;
         case "transferList":
             transferList();
+            break;
+        case "paymentList":
+            paymentListAjax();            
+            break;
+        case "cashierList":
+            cashierList();
+            break;
+        case "secretList":
+            secretList();
             break;
     }
 })();
@@ -335,6 +345,21 @@ function affiliatesListAjax(){
     $.ajax({
         cache:false,
         url:"affiliateListTable.html",
+        type:"post",
+        success:function(data){
+            checkAndShowErrorRequest(data);
+            $("#output").html(data);            
+        },error:function(e1,e2,e3){
+            showError();
+        }
+    });
+}
+
+function paymentListAjax(){    
+    $("#output").html(loader);     
+    $.ajax({
+        cache:false,
+        url:"paymentListTable.html",
         type:"post",
         success:function(data){
             checkAndShowErrorRequest(data);
@@ -2660,6 +2685,28 @@ function toggleActiveCompany(companyId) {
 
 }
 
+function toggleActiveCashier(cashierId) {
+
+    alertify.confirm(text290, function (e) {
+        if (e) {
+            $.ajax({
+                url: "toggleActiveCashier.html",
+                data: {cashierId: cashierId},
+                beforeSend: function (xhr) {
+                    $.isLoading({text: loader, position: "overlay"})                        
+                },success: function (data, textStatus, jqXHR) {
+                    cashierList();
+                }, error: function (jqXHR, textStatus, errorThrown) {
+                    showError();
+                },complete: function (jqXHR, textStatus) {
+                    $.isLoading("hide");
+                }
+            });
+        }
+    });
+
+}
+
 function partnerList(){    
     $("#output").html(loader);    
     $.ajax({
@@ -2684,5 +2731,26 @@ function transferList(){
     });    
 }
 
+function cashierList(){    
+    $("#output").html(loader);
+    $.ajax({
+        url:"cashierTable.html",
+        success: function (data, textStatus, jqXHR) {
+            $("#output").html(data);    
+        },error: function (jqXHR, textStatus, errorThrown) {
+            showError();
+        }        
+    });
+}
 
-
+function secretList(){    
+    $("#output").html(loader);
+    $.ajax({
+        url:"secretTable.html",
+        success: function (data, textStatus, jqXHR) {
+            $("#output").html(data);    
+        },error: function (jqXHR, textStatus, errorThrown) {
+            showError();
+        }        
+    });
+}

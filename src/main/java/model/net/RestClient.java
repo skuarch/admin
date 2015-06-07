@@ -63,6 +63,11 @@ public class RestClient {
         hurlc.setRequestMethod("POST");
         hurlc.setDoInput(true);
         hurlc.setDoOutput(true);
+        hurlc.setUseCaches(false);
+        hurlc.setDefaultUseCaches(false);
+        hurlc.setRequestProperty("Pragma", "no-cache");
+        hurlc.setRequestProperty("Cache-Control", "no-cache");
+        hurlc.setRequestProperty("Expires", "-1");
 
     }
 

@@ -73,7 +73,13 @@ public class Authentication extends BaseController {
             parameters.put("email", email);
             parameters.put("password", password);
 
-            tmp = RestPostClient.sendReceive(parameters, Constants.URI_ADMINISTRATOR_AUTHENTICATION); 
+            tmp = RestPostClient.sendReceive(
+                    parameters, 
+                    Constants.API_URL, 
+                    Constants.API_FIRST_VERSION, 
+                    Constants.URI_ADMINISTRATOR_AUTHENTICATION
+            );
+            
             
             if (tmp != null && tmp.length() > 0) {
                 

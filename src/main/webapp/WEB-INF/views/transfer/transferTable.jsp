@@ -17,30 +17,30 @@
                         <thead>
                             <tr>
                                 <th>
-                                    <spring:message code="text350" />
+                                    <spring:message code="text367" />
                                 </th>
                                 <th>
-                                    <spring:message code="text351" />
+                                    <spring:message code="text368" />
                                 </th>                                
                                 <th>
-                                    <spring:message code="text356" />
+                                    <spring:message code="text369" />
                                 </th>
                                 <th>
-                                    <spring:message code="text358" />
+                                    <spring:message code="text370" />
                                 </th>
                                 <th>
-                                    <spring:message code="text352" />
+                                    <spring:message code="text371" />
                                 </th>                                
                                 <th>
-                                    <spring:message code="text354" />
+                                    <spring:message code="text372" />
                                 </th>
                             </tr>
                         </thead>
                         <tbody>  
-                            <c:forEach var="t" items="${transfers}" varStatus="loop" begin="1">
+                            <c:forEach var="t" items="${transfers}">
                                 <tr>
                                     <td>                                        
-                                        ${loop.index}                                        
+                                        ${t.getId()}                                        
                                     </td>
                                     <td>
                                         ${t.getAmount()}

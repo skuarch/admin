@@ -31,7 +31,7 @@ public class ToggleActiveFreelancer extends BaseController {
     //==========================================================================
     @RequestMapping(value = {"toggleActiveFreelancer"})
     public ModelAndView toggleActiveFreelancer(@RequestParam int freelancerId, Locale locale) {
-
+        
         ModelAndView mav = null;
         String json;
         HashMap<String,Object> parameters;     
