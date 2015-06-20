@@ -44,28 +44,20 @@ public class UpdatePasswordProcess extends BaseController {
         String uri;
 
         try {
-
+            
             setHeaderNoChache(response);
 
             personBasicInformation = PersonBasicInformationUtil.getPersonBasicInformation(session);
             parameters = PersonBasicInformationUtil.createHashMapFreelancerUpdatePassword(currentPassword,
                     newPassword,
                     newPassword2,
-                    personBasicInformation.getId());
-
-            if (personBasicInformation.getPersonType() == Constants.PERSON_TYPE_AFFILIATE) {
-                //change password to affiliate
-                uri = Constants.URI_AFFILIATE_UPDATE_PASSWORD;
-            } else {
-                //change password to partner
-                uri = Constants.URI_PARTNER_UPDATE_PASSWORD;
-            }
+                    personBasicInformation.getId());            
 
             json = RestPostClient.sendReceive(
                     parameters,
                     Constants.API_URL,
                     Constants.API_FIRST_VERSION,
-                    uri);
+                    Constants.URI_ADMINISTRATOR_UPDATE_PASSWORD);
             jsono = new JSONObject(json);
             mav.addObject("json", jsono);
 

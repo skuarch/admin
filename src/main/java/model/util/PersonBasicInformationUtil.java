@@ -37,24 +37,19 @@ public class PersonBasicInformationUtil {
     }
 
     //==========================================================================
-    public static HashMap<String, Object> createHashMapFreelancer(PersonBasicInformation freelancer) {
+    public static HashMap<String, Object> createHashMapPerson(PersonBasicInformation personBasicInformation) {
 
         HashMap hm = new HashMap();
 
         try {
 
             //avoid some html tags
-            hm.put("id", freelancer.getId());
-            hm.put("person.email", StringEscapeUtils.escapeHtml4(String.valueOf(freelancer.getEmail())));
-            hm.put("person.name", StringEscapeUtils.escapeHtml4(String.valueOf(freelancer.getName())));
-            hm.put("person.lastName", StringEscapeUtils.escapeHtml4(String.valueOf(freelancer.getLastName())));
-            hm.put("person.phone", StringEscapeUtils.escapeHtml4(String.valueOf(freelancer.getPhone())));
-            hm.put("person.gender.id", freelancer.getGender());
-            hm.put("address.all", StringEscapeUtils.escapeHtml4(String.valueOf(freelancer.getAddressAll())));
-            hm.put("address.zipCode", freelancer.getZipCode());
-            hm.put("address.country", StringEscapeUtils.escapeHtml4(String.valueOf(freelancer.getCountry())));
-            hm.put("address.city", StringEscapeUtils.escapeHtml4(String.valueOf(freelancer.getCity())));
-            hm.put("address.state", StringEscapeUtils.escapeHtml4(String.valueOf(freelancer.getState())));
+            hm.put("id", personBasicInformation.getId());
+            hm.put("email", StringEscapeUtils.escapeHtml4(String.valueOf(personBasicInformation.getEmail())));
+            hm.put("name", StringEscapeUtils.escapeHtml4(String.valueOf(personBasicInformation.getName())));
+            hm.put("lastName", StringEscapeUtils.escapeHtml4(String.valueOf(personBasicInformation.getLastName())));
+            hm.put("phone", StringEscapeUtils.escapeHtml4(String.valueOf(personBasicInformation.getPhone())));
+            hm.put("gender.id", Integer.valueOf(personBasicInformation.getGender()));            
 
         } catch (Exception e) {
             throw e;

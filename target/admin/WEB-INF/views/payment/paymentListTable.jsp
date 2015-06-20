@@ -40,6 +40,9 @@
                                 <th>
                                     <spring:message code="text374" />
                                 </th>
+                                <th>
+                                    cvambiar esto
+                                </th>
                             </tr>
                         </thead>
                         <tbody>  
@@ -69,6 +72,9 @@
                                     <td>
                                         ${p.paymentStatus.getName()}
                                     </td>
+                                    <td>                                        
+                                        <input type="checkbox" name="pay" value="${p.getId()}" class="form-control" <c:out value="${p.paymentStatus.getId() == 1 ? 'disabled': ''}"/>/> 
+                                    </td>                                            
                                 </tr>
                             </c:forEach>
                         </tbody>
@@ -78,4 +84,7 @@
         </div>
     </c:otherwise>
 </c:choose>
+<input type="button" value="pagar" class="btn btn-success btn-lg" onclick="doPay()"/>
+<br/>
+<br/><br/><br/>
 <script type="text/javascript">eval("${js}");</script>        

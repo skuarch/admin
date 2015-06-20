@@ -14,7 +14,7 @@ public class Constants {
     
     public static final int INTERVAL_SESSION_CHECK = 60000;
     public static final int INCREASE_COUNTER = 60;
-    public static final String PATH_UPLOADS_TMP = "/opt/freelancer/uploads/";
+    public static final String PATH_UPLOADS_TMP = "/opt/regaloenclave/uploads/";
     public static final int CONNECTION_TIMEOUT = 2000;
     public static final int READ_TIMEOUT = 2000;
     public static final int MAX_FILE_SIZE_UPLOAD = 1048576; // 1 mb
@@ -24,12 +24,13 @@ public class Constants {
     public static final String URI_AUTHENTICATION = "/authentication";
     
     public static final String URI_ADMINISTRATOR_AUTHENTICATION = "/authentication/administrator";
+    public static final String URI_ADMINISTRATOR_UPDATE_PASSWORD = "/administrator/update/password";
     
     public static final String URI_FREELANCER_CREATE = "/freelancer/create";    
     public static final String URI_FREELANCER_AUTHENTICATION = "/authentication/freelancer";
     public static final String URI_FREELANCER_GET_AFFILIATES = "/freelancer/get/affiliates";
     public static final String URI_FREELANCER_GET_COMPANIES = "/freelancer/get/companies";
-    public static final String URI_FREELANCER_UPDATE = "/freelancer/update";
+    public static final String URI_PERSON_UPDATE = "/person/update";
     public static final String URI_FREELANCER_UPDATE_PASSWORD = "/freelancer/update/password";
     public static final String URI_FREELANCER_GET_LIST = "/freelancer/get/list";           
     public static final String URI_FREELANCER_TOGGLE_ACTIVE = "/freelancer/toggle/active";    
@@ -78,6 +79,7 @@ public class Constants {
     public static final String URI_COMPANY_TOGGLE_ACTIVE = "/company/toggle/active";    
     
     public static final String URI_TRANSFER_GET_LIST = "/transfer/get/list";
+    public static final String URI_PAYMENT_UPDATE_STATUS = "/payment/update/status";        
     
     public static final String URI_PAYMENT_GET_LIST = "/payment/get/list";
     
@@ -144,7 +146,7 @@ public class Constants {
     }
 
     public static String getURI_FREELANCER_UPDATE() {
-        return URI_FREELANCER_UPDATE;
+        return URI_PERSON_UPDATE;
     }
 
     public static String getURI_FREELANCER_UPDATE_PASSWORD() {

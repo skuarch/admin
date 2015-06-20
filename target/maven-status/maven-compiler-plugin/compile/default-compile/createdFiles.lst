@@ -43,6 +43,7 @@ controllers/application/CloseSession.class
 model/beans/Freelancer.class
 model/util/SessionUtil.class
 model/beans/AuthenticationBean.class
+controllers/payment/PaymentUpdateStatus.class
 model/util/PersonBasicInformationUtil.class
 controllers/responsable/UpdateResponsableFormProccess.class
 controllers/application/UpdatePasswordProcess.class
@@ -98,6 +99,7 @@ model/beans/Contact.class
 endpoints/Notification.class
 controllers/company/CompanyList.class
 interceptors/Session.class
+controllers/person/UpdatePersonProfileProcess.class
 controllers/cashier/CreateCashierForm.class
 controllers/application/Logout.class
 model/net/RestClient.class
@@ -106,6 +108,7 @@ controllers/transfer/TransferList.class
 controllers/company/CreateNewCompanyProcess.class
 controllers/affiliate/AffiliateList.class
 controllers/establishment/CreateEstablishmentProccess.class
+model/net/RestClient$1.class
 controllers/company/ToggleActiveCompany.class
 model/beans/Category.class
 model/beans/SecretStatus.class
@@ -116,8 +119,8 @@ model/beans/PaymentStatus.class
 controllers/affiliate/UpdateAffiliateBankInformationProcess.class
 controllers/partner/PartnerTable.class
 model/beans/EstablishmentType.class
+model/net/RestClient$2.class
 controllers/cashier/ToggleActiveCashier.class
 controllers/establishment/EstablishmentDetailsForm.class
 controllers/affiliate/AffiliateDetailsForm.class
-controllers/freelancer/UpdateFreelancerProcess.class
 controllers/company/UpdateCompanyBankInformationProcess.class

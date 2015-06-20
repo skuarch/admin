@@ -599,7 +599,7 @@ $("#profileFreelancerForm").submit(function(event){
 
                 $.ajax({
                     cache: false,
-                    url: "updateFreelancerProfileProcess.html",
+                    url: "updatePersonProfileProcess.html",
                     type: "post",
                     data: data,
                     beforeSend: function (xhr) {
@@ -641,7 +641,7 @@ $("#updatePasswordForm").submit(function(event){
         error += "<br>" + text106;
     }
     
-    if (currentPassword.length < 5 || newPassword.length > 8) {
+    if (currentPassword.length < 5 || newPassword.length > 10) {
         error += "<br>" + text136;
     }
     
@@ -649,7 +649,7 @@ $("#updatePasswordForm").submit(function(event){
         error += "<br>" + text106;
     }
     
-    if (newPassword.length < 5 || newPassword.length > 8) {
+    if (newPassword.length < 5 || newPassword.length > 10) {
         error += "<br>" + text136;
     }
     
@@ -657,7 +657,7 @@ $("#updatePasswordForm").submit(function(event){
         error += "<br>" + text106;
     }
     
-    if (newPassword2.length < 5 || newPassword2.length > 8) {
+    if (newPassword2.length < 5 || newPassword2.length > 10) {
         error += "<br>" + text136;
     }  
     
@@ -2752,5 +2752,30 @@ function secretList(){
         },error: function (jqXHR, textStatus, errorThrown) {
             showError();
         }        
+    });
+}
+
+function doPay(){
+    var values = new Array();
+    $.each($("input[name='pay']:checked"), function() {
+        values.push($(this).val());        
+    });
+    $.ajax({
+        url:"paymentUpdateStatus.html",
+        type:"post",
+        data:{'payments':values.toString()},
+        beforeSend: function (xhr) {            
+            $.isLoading({text: loader, position: "overlay"})                                                                                                                                                           
+        },success: function (data, textStatus, jqXHR) { 
+            if(data.success === true){
+                paymentListAjax();
+            }else{
+                showError();
+            }
+        },error: function (jqXHR, textStatus, errorThrown) {
+            showError();
+        }, complete: function (jqXHR, textStatus) {
+            $.isLoading("hide");
+        }
     });
 }

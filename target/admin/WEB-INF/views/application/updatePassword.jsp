@@ -47,7 +47,7 @@
                                                 <label for="currentPassword">
                                                     <spring:message code="text268" />
                                                 </label>
-                                                <input id="currentPassword" name="currentPassword" type="password" class="form-control" required="required" placeholder="<spring:message code="text151" />" maxlength="8" tabindex="1" />
+                                                <input id="currentPassword" name="currentPassword" type="password" class="form-control" required="required" placeholder="<spring:message code="text151" />" maxlength="10" tabindex="1" />
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
@@ -55,7 +55,7 @@
                                                 <label for="newPassword">
                                                     <spring:message code="text269" />
                                                 </label>
-                                                <input id="newPassword" name="newPassword" type="password" class="form-control" required="required" placeholder="<spring:message code="text152" />" maxlength="8" tabindex="2" />
+                                                <input id="newPassword" name="newPassword" type="password" class="form-control" required="required" placeholder="<spring:message code="text152" />" maxlength="10" tabindex="2" />
                                             </div>
                                         </div>
                                         <div class="col-lg-12">
@@ -63,7 +63,7 @@
                                                 <label for="newPassword2">
                                                     <spring:message code="text270" />
                                                 </label>
-                                                <input id="newPassword2" name="newPassword2" type="password" class="form-control" required="required" placeholder="<spring:message code="text153" />" maxlength="8" tabindex="3" />
+                                                <input id="newPassword2" name="newPassword2" type="password" class="form-control" required="required" placeholder="<spring:message code="text153" />" maxlength="10" tabindex="3" />
                                             </div>
                                         </div>
                                         <div class="col-lg-12">

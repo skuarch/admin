@@ -26,7 +26,6 @@
 /home/skuarch/NetBeansProjects/admin/src/main/java/model/beans/Affiliate.java
 /home/skuarch/NetBeansProjects/admin/src/main/java/model/logic/Constants.java
 /home/skuarch/NetBeansProjects/admin/src/main/java/model/beans/Establishment.java
-/home/skuarch/NetBeansProjects/admin/src/main/java/controllers/freelancer/UpdateFreelancerProcess.java
 /home/skuarch/NetBeansProjects/admin/src/main/java/controllers/affiliate/CreateNewAffiliateProcess.java
 /home/skuarch/NetBeansProjects/admin/src/main/java/controllers/company/UpdateCompanyBankInformationProcess.java
 /home/skuarch/NetBeansProjects/admin/src/main/java/model/util/SessionUtil.java
@@ -86,6 +85,8 @@
 /home/skuarch/NetBeansProjects/admin/src/main/java/model/beans/Person.java
 /home/skuarch/NetBeansProjects/admin/src/main/java/controllers/application/BaseController.java
 /home/skuarch/NetBeansProjects/admin/src/main/java/model/beans/SystemConfiguration.java
+/home/skuarch/NetBeansProjects/admin/src/main/java/controllers/person/UpdatePersonProfileProcess.java
+/home/skuarch/NetBeansProjects/admin/src/main/java/controllers/payment/PaymentUpdateStatus.java
 /home/skuarch/NetBeansProjects/admin/src/main/java/controllers/affiliate/AffiliateList.java
 /home/skuarch/NetBeansProjects/admin/src/main/java/model/logic/NotificationBroadcast.java
 /home/skuarch/NetBeansProjects/admin/src/main/java/controllers/cashier/UpdateCashierProccess.java
