@@ -22,7 +22,9 @@ public class Establishment implements Serializable {
     private List<Cashier> cashier = new ArrayList<>();    
     private List<Category> category = new ArrayList<>();    
     private String registrationDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
-    private byte isSoftDeleted = 0;
+    private byte isSoftDeleted = 0;    
+    private String website;
+    private String facebook;
 
     public long getId() {
         return id;
@@ -111,6 +113,22 @@ public class Establishment implements Serializable {
     public void setLongitude(String longitude) {
         this.longitude = longitude;
     }
+
+    public String getWebsite() {
+        return website;
+    }
+
+    public void setWebsite(String website) {
+        this.website = website;
+    }
+
+    public String getFacebook() {
+        return facebook;
+    }
+
+    public void setFacebook(String facebook) {
+        this.facebook = facebook;
+    }    
 
     @Override
     public String toString() {

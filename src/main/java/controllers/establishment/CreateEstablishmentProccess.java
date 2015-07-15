@@ -64,7 +64,7 @@ public class CreateEstablishmentProccess extends BaseController {
         String json = null;
         JSONObject jsono = null;
         String uri = null;
-
+        
         try {
             
             //do some validations here            

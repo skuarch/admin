@@ -17,6 +17,9 @@
                         <thead>
                             <tr>
                                 <th>
+                                    #
+                                </th>
+                                <th>
                                     <spring:message code="text230" />
                                 </th>
                                 <th>
@@ -24,6 +27,9 @@
                                 </th>                                
                                 <th>
                                     <spring:message code="text232" />
+                                </th>
+                                <th>
+                                    <spring:message code="text391" />
                                 </th>
                                 <th>
                                     <spring:message code="text233" />
@@ -34,6 +40,9 @@
                             <c:forEach var="a" items="${affiliates}">
                                 <tr>
                                     <td>
+                                        ${a.getId()}
+                                    </td>                                    
+                                    <td>
                                         ${a.person.getName()}
                                     </td>
                                     <td>
@@ -42,9 +51,19 @@
                                     <td>
                                         ${a.person.getRegistrationDate()}
                                     </td>        
-                                    <td>
+                                    <td class="text-center">
                                         <c:choose>
-                                            <c:when test="${a.getActive() == 0}">                                                
+                                            <c:when test="${a.getApproved() == 1}">
+                                                <i class="btn fa fa-check-circle fa-2x" style="color:greenyellow"></i>
+                                            </c:when>
+                                            <c:otherwise>
+                                                <i class="btn fa fa-times-circle-o fa-2x" style="color:red"></i>
+                                            </c:otherwise>
+                                        </c:choose>                                        
+                                    </td>
+                                    <td>                                        
+                                        <c:choose>
+                                            <c:when test="${a.getActive() == 0}">                                                                                                                                                
                                                 <button class="btn btn-success" onclick="toggleActiveAffiliate(${a.getId()})">
                                                     <spring:message code="text360" />
                                                 </button>                                                
@@ -60,7 +79,7 @@
                                         </button>
                                         <button class="btn btn-success" onclick="javascript:redirectData('redirector.html', {url: 'affiliateDetails.html', affiliateId:${a.getId()}})">
                                             <spring:message code="text235" />
-                                        </button>
+                                        </button>                                        
                                     </td>
                                 </tr>
                             </c:forEach>

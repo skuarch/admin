@@ -3,6 +3,7 @@ package model.util;
 import java.util.ArrayList;
 import java.util.HashMap;
 import model.beans.Category;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  *
@@ -209,6 +210,7 @@ public class ApplicationUtil {
 
     //==========================================================================
     public static HashMap<String, Object> createParameters(
+            byte discountPercentage,
             long companyId,
             String name,
             String brand,
@@ -217,7 +219,9 @@ public class ApplicationUtil {
             short personGenderId,
             String personPhone,
             String personEmail,
-            String category,            
+            String category,    
+            String website,
+            String facebook,
             String description
             
     ) throws Exception {
@@ -226,6 +230,7 @@ public class ApplicationUtil {
 
         try {
 
+            hm.put("discountPercentage", discountPercentage);
             hm.put("companyId", companyId);
             hm.put("name", name);
             hm.put("brand", brand);
@@ -238,6 +243,8 @@ public class ApplicationUtil {
             for (int i = 0; i < cat.length; i++) {
                 hm.put("category[" + i + "].id", cat[i]);
             }            
+            hm.put("website", website);
+            hm.put("facebook", facebook);
             hm.put("description", description);
 
         } catch (Exception e) {
@@ -384,7 +391,8 @@ public class ApplicationUtil {
 
     //==========================================================================
     public static HashMap<String, Object> createParameters(
-            long id,
+            byte discountPercentage,
+            long id,            
             String personName,
             String personLastName,
             String personEmail,
@@ -392,6 +400,8 @@ public class ApplicationUtil {
             short personGenderId,
             String brand,
             String category,
+            String website,
+            String facebook,
             String description
     ) throws Exception {
 
@@ -400,7 +410,8 @@ public class ApplicationUtil {
         try {
 
             //avoid some html tags
-            hm.put("id", id);
+            hm.put("discountPercentage", discountPercentage);            
+            hm.put("id", id);            
             hm.put("person.name", personName);
             hm.put("person.lastName", personLastName);
             hm.put("person.email", personEmail);
@@ -413,6 +424,8 @@ public class ApplicationUtil {
                 hm.put("category[" + i + "].id", cat[i]);
             }
 
+            hm.put("website", website);
+            hm.put("facebook", facebook);
             hm.put("description", description);
             
         } catch (Exception e) {

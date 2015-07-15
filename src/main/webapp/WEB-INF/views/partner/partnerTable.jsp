@@ -17,6 +17,9 @@
                         <thead>
                             <tr>
                                 <th>
+                                    #
+                                </th>
+                                <th>
                                     <spring:message code="text350" />
                                 </th>
                                 <th>
@@ -40,6 +43,9 @@
                             <c:forEach var="p" items="${partners}">
                                 <tr>
                                     <td>
+                                        ${p.getId()}
+                                    </td>
+                                    <td>
                                         ${p.person.getName()}
                                     </td>
                                     <td>
@@ -57,12 +63,12 @@
                                     <td class="text-center">                                        
                                         <c:choose>
                                             <c:when test="${p.getActive() == 0}">                                                
-                                                <button class="btn btn-success btn-block" onclick="toggleActiveFreelancer(${p.getId()})">
+                                                <button class="btn btn-success btn-block" onclick="toggleActivePartner(${p.getId()})">
                                                     <spring:message code="text360" />
                                                 </button>                                                
                                             </c:when>
                                             <c:otherwise>                                                
-                                                <button class="btn btn-default btn-block" onclick="toggleActiveFreelancer(${p.getId()})">
+                                                <button class="btn btn-default btn-block" onclick="toggleActivePartner(${p.getId()})">
                                                     <spring:message code="text361" />
                                                 </button>                                                
                                             </c:otherwise>   

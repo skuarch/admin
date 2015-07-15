@@ -3,7 +3,7 @@ package model.beans;
 import java.io.Serializable;
 
 /**
- * basic version of Freelancer.
+ * 
  * @author skuarch
  */
 public class PersonBasicInformation implements Serializable {
@@ -27,6 +27,7 @@ public class PersonBasicInformation implements Serializable {
     private long personType;
     private boolean isPartner;
     private boolean isAffiliate;
+    private boolean isCompany;
 
     public PersonBasicInformation() {
     }
@@ -181,6 +182,14 @@ public class PersonBasicInformation implements Serializable {
 
     public void setPersonType(long personType) {
         this.personType = personType;
+    }
+
+    public boolean isIsCompany() {
+        return isCompany;
+    }
+
+    public void setIsCompany(boolean isCompany) {
+        this.isCompany = isCompany;
     }
 
 }

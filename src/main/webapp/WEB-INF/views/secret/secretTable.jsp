@@ -3,6 +3,8 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <jsp:useBean id="cons" class="model.logic.Constants" />
+<input type="button" value="refresh" onclick="secretList()" class="btn btn-default btn-block" />
+<br/>
 <c:choose>
     <c:when test="${fn:length(secrets) <= 0}">
         <div class="alert alert-warning">
@@ -29,7 +31,7 @@
                                     <spring:message code="text368" />
                                 </th>
                                 <th>
-                                    <spring:message code="text378" />
+                                    <spring:message code="text377" />
                                 </th>
                                 <th>
                                     <spring:message code="text376" />

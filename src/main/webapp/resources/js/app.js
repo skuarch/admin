@@ -809,7 +809,7 @@ $("#createNewAffiliate").submit(function(event){
         error += "<br>" + text112;
     }    
 
-    if (taxId.length != 13) {
+    if (taxId.length < 12 || taxId.length > 13) {
         error += "<br>" + text273;
     }
     
@@ -964,7 +964,7 @@ $("#createEstablishmentForm").submit(function (event) {
     var zipCode = $("#zipCode").val();
     if(zipCode == "" || zipCode == null || String(zipCode).length < 2){
         error += "<br>" + text210;
-    }
+    }    
     
     var resName = $("#responsable_name").val();
     if(resName == "" || resName == null || String(resName).length < 2){
@@ -1074,7 +1074,8 @@ $("#createEstablishmentForm").submit(function (event) {
                     success: function (data) {
                         checkAndShowErrorRequest(data);
                         if(data.created == true){
-                            showSuccess();                            
+                            showSuccess();   
+                            $("#createEstablishmentForm").trigger('reset');
                         }
                     }, error: function (e1, e2, e3) {
                         showError();
@@ -1721,7 +1722,7 @@ $("#createNewCompanyForm").submit(function(event){
         error += "<br>" + text284;
     }    
 
-    if (taxId.length != 13) {
+    if (taxId.length < 12 || taxId.length > 13) {
         error += "<br>" + text273;
     }
     
@@ -1842,6 +1843,7 @@ function updateAffiliateBasicInformationFormSubmit(event){
     
     preventDefaultForm(event);
     var formData = new FormData(); 
+    var discountPercentage = $('#discountPercentage').val();    
     var logo = $('#logo')[0].files[0];    
     var error = "";
     var name = $("#name").val();
@@ -1851,7 +1853,13 @@ function updateAffiliateBasicInformationFormSubmit(event){
     var gender = $("#gender").val();
     var brand = $("#brand").val();
     var category = $("#category").val();
+    var website = $("#website").val();
+    var facebook = $("#facebook").val();
     var description = $("#description").val();
+
+    if (discountPercentage < 0 || discountPercentage > 100) {
+        error += "<br>" + text379;
+    }
 
     if (name.length < 2) {
         error += "<br>" + text104;
@@ -1910,6 +1918,7 @@ function updateAffiliateBasicInformationFormSubmit(event){
                     contentType: false,
                     beforeSend: function (xhr) {                        
                         $.isLoading({text: loader, position: "overlay"})                        
+                        formData.append("discountPercentage", discountPercentage);
                         formData.append("person.name", name);
                         formData.append("person.lastName", lastName);
                         formData.append("person.email", email);
@@ -1919,6 +1928,8 @@ function updateAffiliateBasicInformationFormSubmit(event){
                         formData.append("brand", brand);
                         formData.append("category", category);
                         formData.append('logo', logo);       
+                        formData.append("website", website);
+                        formData.append("facebook", facebook);
                         formData.append("description", description);
                     },
                     success: function (data) {
@@ -1978,7 +1989,7 @@ function updateAffiliateTaxFormSubmit(event){
         error += "<br>" + text112;
     }    
 
-    if (taxId.length != 13) {
+    if (taxId.length < 12 || taxId.length > 13) {
         error += "<br>" + text273;
     }
     
@@ -2148,6 +2159,7 @@ function updateCompanyBasicInformationFormSubmit(event){
     
     preventDefaultForm(event);
     var formData = new FormData();
+    var discountPercentage = $('#discountPercentage').val();    
     var logo = $('#logo')[0].files[0];    
     var error = "";
     var name = $("#name").val();
@@ -2158,7 +2170,13 @@ function updateCompanyBasicInformationFormSubmit(event){
     var contactPhone = $("#contactPhone").val();
     var contactEmail = $("#contactEmail").val();
     var category = $("#category").val();
+    var website = $("#website").val();
+    var facebook = $("#facebook").val();
     var description = $("#description").val();    
+
+    if (discountPercentage < 0 || discountPercentage > 100) {
+        error += "<br>" + text379;
+    }
 
     if (name.length < 2) {
         error += "<br>" + text104;
@@ -2201,6 +2219,7 @@ function updateCompanyBasicInformationFormSubmit(event){
                     contentType: false,
                     beforeSend: function (xhr) {
                         $.isLoading({text: loader, position: "overlay"})
+                        formData.append("discountPercentage", discountPercentage);
                         formData.append("companyId", $("#companyId").val());
                         formData.append("name", name);
                         formData.append("brand", brand);
@@ -2211,6 +2230,8 @@ function updateCompanyBasicInformationFormSubmit(event){
                         formData.append("person.email", contactEmail);
                         formData.append("category", category);
                         formData.append('logo', logo);       
+                        formData.append("website", website);
+                        formData.append("facebook", facebook);
                         formData.append("description", description);
                     },
                     success: function (data) {
@@ -2269,7 +2290,7 @@ function updateCompanyTaxFormSubmit(event){
         error += "<br>" + text289;
     }    
 
-    if (taxId.length != 13) {
+    if (taxId.length < 12 || taxId.length > 13) {
         error += "<br>" + text273;
     }
     
@@ -2603,7 +2624,7 @@ function freelancerList(){
 
 
 function detailsFreelancerModal(freelancer){
-    
+  
     $("#addressSpan").html(freelancer.addressAll);
     $("#countrySpan").html(freelancer.country);
     $("#stateSpan").html(freelancer.state);
@@ -2611,7 +2632,7 @@ function detailsFreelancerModal(freelancer){
     $("#zipCodeSpan").html(freelancer.zipCode);
     $("#lastLoginSpan").html(freelancer.lastLogin);
     
-    if(freelancer.genderId === 0){
+    if(freelancer.genderId == 1){
         $("#genderSpan").html(text97);
     }else{        
         $("#genderSpan").html(text98);
@@ -2685,17 +2706,39 @@ function toggleActiveCompany(companyId) {
 
 }
 
-function toggleActiveCashier(cashierId) {
+function toggleActiveCompany(companyId) {
 
     alertify.confirm(text290, function (e) {
         if (e) {
             $.ajax({
-                url: "toggleActiveCashier.html",
-                data: {cashierId: cashierId},
+                url: "toggleActiveCompany.html",
+                data: {companyId: companyId},
                 beforeSend: function (xhr) {
                     $.isLoading({text: loader, position: "overlay"})                        
                 },success: function (data, textStatus, jqXHR) {
-                    cashierList();
+                    companiesListAjax();
+                }, error: function (jqXHR, textStatus, errorThrown) {
+                    showError();
+                },complete: function (jqXHR, textStatus) {
+                    $.isLoading("hide");
+                }
+            });
+        }
+    });
+
+}
+
+function toggleActivePartner(partnerId) {
+
+    alertify.confirm(text290, function (e) {
+        if (e) {
+            $.ajax({
+                url: "toggleActivePartner.html",
+                data: {partnerId: partnerId},
+                beforeSend: function (xhr) {
+                    $.isLoading({text: loader, position: "overlay"})                        
+                },success: function (data, textStatus, jqXHR) {
+                    partnerList();
                 }, error: function (jqXHR, textStatus, errorThrown) {
                     showError();
                 },complete: function (jqXHR, textStatus) {
@@ -2760,22 +2803,90 @@ function doPay(){
     $.each($("input[name='pay']:checked"), function() {
         values.push($(this).val());        
     });
-    $.ajax({
-        url:"paymentUpdateStatus.html",
-        type:"post",
-        data:{'payments':values.toString()},
-        beforeSend: function (xhr) {            
-            $.isLoading({text: loader, position: "overlay"})                                                                                                                                                           
-        },success: function (data, textStatus, jqXHR) { 
-            if(data.success === true){
-                paymentListAjax();
-            }else{
-                showError();
+    
+    if(values.length < 1){
+        
+        alertify.alert(text381);        
+        return;
+        
+    }else{        
+        
+        alertify.confirm(text290, function (e) {
+            if(e){
+                $.ajax({
+                    url:"paymentUpdateStatus.html",
+                    type:"post",
+                    data:{'payments':values.toString()},
+                    beforeSend: function (xhr) {            
+                        $.isLoading({text: loader, position: "overlay"})                                                                                                                                                           
+                    },success: function (data, textStatus, jqXHR) { 
+                        if(data.success === true){
+                            paymentListAjax();
+                        }else{
+                            showError();
+                        }
+                    },error: function (jqXHR, textStatus, errorThrown) {
+                        showError();
+                    }, complete: function (jqXHR, textStatus) {
+                        $.isLoading("hide");
+                    }
+                });   
             }
-        },error: function (jqXHR, textStatus, errorThrown) {
-            showError();
-        }, complete: function (jqXHR, textStatus) {
-            $.isLoading("hide");
+        });
+    }
+    
+}
+
+
+function deleteEstablishment(establishmentId, func){
+    
+    if(isNaN(establishmentId)){
+        return;
+    }
+    
+    alertify.confirm(text290, function (e) {
+        if (e) {
+           $.ajax({
+               url:"deleteEstablishmentProcess.html",
+               type:"post",
+               cache:false,
+               data:{establishmentId:establishmentId},
+               beforeSend: function (xhr) {
+                    $.isLoading({text: loader, position: "overlay"})                        
+               }, success: function (data, textStatus, jqXHR) {
+                    checkAndShowErrorRequest(data);
+                    if (data.deleted === true) {
+                        showSuccess();     
+                        func();
+                    }
+               }, error: function (jqXHR, textStatus, errorThrown) {
+                   showError();
+               }, complete: function (jqXHR, textStatus) {
+                   $.isLoading("hide");
+               }
+            });  
+        } 
+    });    
+}
+
+function deleteAffiliate(affiliateId) {
+
+    alertify.confirm(text290, function (e) {
+        if (e) {
+            $.ajax({
+                url: "deleteAffiliate.html",
+                data: {affiliateId: affiliateId},
+                beforeSend: function (xhr) {
+                    $.isLoading({text: loader, position: "overlay"})                        
+                },success: function (data, textStatus, jqXHR) {
+                    affiliatesListAjax();
+                }, error: function (jqXHR, textStatus, errorThrown) {
+                    showError();
+                },complete: function (jqXHR, textStatus) {
+                    $.isLoading("hide");
+                }
+            });
         }
     });
+
 }

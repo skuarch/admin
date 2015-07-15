@@ -14,6 +14,14 @@
                 <spring:message code="text295"/> <strong><spring:message code="text296"/></strong>
             </div> 
             <div class="row">
+                <div class="col-lg-12">
+                    <div class="form-group">                                 
+                        <label><spring:message code="text378" /></label>
+                        <input name="discountPercentage" id="discountPercentage" value="${company.getDiscountPercentage()}" class="form-control" style="background-color: #FBF5EF" max="100" min="0" type="number" required="required" tabindex="1"/>
+                    </div> 
+                </div>
+            </div>
+            <div class="row">
                 <div class="col-lg-6">
                     <div class="form-group"> 
                         <label><spring:message code="text297"/></label>
@@ -74,6 +82,18 @@
                     <div class="form-group"> 
                         <label><spring:message code="text344"/> </label>
                         <input name="logo" id="logo" placeholder="" maxlength="55" class="form-control" type="file" tabindex="8" />
+                    </div> 
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group"> 
+                        <label>Website</label>
+                        <input name="website" id="website" value="${company.getWebsite()}" class="form-control" type="text" maxlength="500" tabindex="9" />
+                    </div> 
+                </div>
+                <div class="col-lg-6">
+                    <div class="form-group"> 
+                        <label>Facebook</label>
+                        <input name="facebook" id="facebook" value="${company.getFacebook()}" class="form-control" type="text" maxlength="500" tabindex="10" />
                     </div> 
                 </div>
                 <div class="col-lg-12">
@@ -264,8 +284,11 @@
                                     ${e.getRegistrationDate()}
                                 </td>
                                 <td>
-                                    <button type="button" class="btn btn-primary btn-block" onclick="javascript:redirectData('redirector.html', {url: 'establishmentDetails.html', establishmentId:${e.getId()}})">                                        
+                                    <button type="button" class="btn btn-primary" onclick="javascript:redirectData('redirector.html', {url: 'establishmentDetails.html', establishmentId:${e.getId()}})">                                        
                                         <spring:message code="text240" />
+                                    </button>
+                                    <button type="button" class="btn btn-danger" onclick="javascript:deleteEstablishment(${e.getId()}, companyDetailsAjax)">
+                                        <spring:message code="text388" />
                                     </button>
                                 </td>
                             </tr>

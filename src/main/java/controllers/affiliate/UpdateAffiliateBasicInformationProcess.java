@@ -38,6 +38,7 @@ public class UpdateAffiliateBasicInformationProcess extends BaseController {
     //==========================================================================
     @RequestMapping(value = {"updateAffiliateBasicInformationProcess", "/updateAffiliateBasicInformationProcess"})
     public ModelAndView updateAffiliateBasicInformation(            
+            @RequestParam("discountPercentage") byte discountPercentage,
             @RequestParam("person.name") String personName,
             @RequestParam("person.lastName") String personLastName,
             @RequestParam("person.email") String personEmail,
@@ -46,6 +47,8 @@ public class UpdateAffiliateBasicInformationProcess extends BaseController {
             @RequestParam("brand") String brand,
             @RequestParam String category,
             @RequestParam(value = "logo", required = false) MultipartFile logoMultiPartFile,
+            @RequestParam("website") String website,
+            @RequestParam("facebook") String facebook,
             @RequestParam("description") String description,
             Locale locale) {
 
@@ -68,6 +71,7 @@ public class UpdateAffiliateBasicInformationProcess extends BaseController {
             affiliateId = SessionUtil.getShortParameter(session, "affiliateId");
             
             parameters = ApplicationUtil.createParameters(
+                    discountPercentage,   
                     affiliateId,
                     personName,
                     personLastName,
@@ -76,6 +80,8 @@ public class UpdateAffiliateBasicInformationProcess extends BaseController {
                     personGenderId,
                     brand,
                     category,
+                    website,
+                    facebook,
                     description
             );
 

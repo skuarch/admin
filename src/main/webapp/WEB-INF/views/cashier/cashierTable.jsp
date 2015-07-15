@@ -17,6 +17,9 @@
                         <thead>
                             <tr>
                                 <th>
+                                    #
+                                </th>
+                                <th>
                                     <spring:message code="text350" />
                                 </th>
                                 <th>
@@ -39,6 +42,9 @@
                         <tbody>  
                             <c:forEach var="c" items="${cashiers}">
                                 <tr>
+                                    <td>
+                                        ${c.getId()}
+                                    </td>
                                     <td>
                                         ${c.person.getName()}
                                     </td>

@@ -38,6 +38,7 @@ public class Constants {
     public static final String URI_PARTNER_AFFILIATE_AUTHENTICATION = "/authentication/partner/affiliate";
     public static final String URI_PARTNER_UPDATE_PASSWORD = "/partner/update/password";
     public static final String URI_PARTNER_GET_LIST = "/partner/get/list";           
+    public static final String URI_PARTNER_TOGGLE_ACTIVE = "/partner/toggle/active";           
     
     public static final String URI_AFFILIATE_CREATE = "/affiliate/create";
     public static final String URI_AFFILIATE_CREATE_ESTABLISHMENT = "/affiliate/create/establishment";
@@ -57,6 +58,7 @@ public class Constants {
     public static final String URI_ESTABLISHMENT_CREATE = "/establishment/create"; 
     public static final String URI_ESTABLISHMENT_GET = "/establishment/get"; 
     public static final String URI_ESTABLISHMENT_UPDATE = "/establishment/update"; 
+    public static final String URI_ESTABLISHMENT_DELETE = "/establishment/delete"; 
     
     public static final String URI_RESPONSABLE_UPDATE = "/responsable/update"; 
     public static final String URI_RESPONSABLE_UPDATE_PASSWORD = "/responsable/update/password"; 

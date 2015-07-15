@@ -20,7 +20,7 @@
                 <jsp:include page="../application/sidemenu.jsp" />
             </nav>
             <div id="page-wrapper">
-                <br/>
+                <br/>                
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="panel panel-default">
@@ -55,6 +55,7 @@
                                         <div class="col-lg-6">
                                             <div class="form-group">                                                 
                                                 <label><spring:message code="text86" /></label>
+                                                ${personBasicInformation.gender}
                                                 <select id="gender" name="gender" class="form-control" tabindex="11">                                                                                                        
                                                     <option value="1" ${personBasicInformation.gender == "1" ? "selected='selected'": ""}><spring:message code="text97" /></option>
                                                     <option value="2" ${personBasicInformation.gender == "2" ? "selected='selected'": ""}><spring:message code="text98" /></option>

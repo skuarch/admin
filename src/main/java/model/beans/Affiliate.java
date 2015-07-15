@@ -31,6 +31,12 @@ public class Affiliate implements Serializable {
     private byte isSoftDeleted = 0;
     private String registrationDate = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());
     private byte active = 0;
+    private byte discountPercentage = 12;
+    private String website;
+    private String facebook;
+    private String logoPathName;
+    private String urlLogo;
+    private byte approved = 0;
 
     public Affiliate() {
     }
@@ -185,6 +191,54 @@ public class Affiliate implements Serializable {
 
     public void setActive(byte active) {
         this.active = active;
+    }
+
+    public byte getDiscountPercentage() {
+        return discountPercentage;
+    }
+
+    public void setDiscountPercentage(byte discountPercentage) {
+        this.discountPercentage = discountPercentage;
+    }
+
+    public String getWebsite() {
+        return website;
+    }
+
+    public void setWebsite(String website) {
+        this.website = website;
+    }
+
+    public String getFacebook() {
+        return facebook;
+    }
+
+    public void setFacebook(String facebook) {
+        this.facebook = facebook;
+    }
+
+    public String getLogoPathName() {
+        return logoPathName;
+    }
+
+    public void setLogoPathName(String logoPathName) {
+        this.logoPathName = logoPathName;
+    }
+
+    public String getUrlLogo() {
+        return urlLogo;
+    }
+
+    public void setUrlLogo(String urlLogo) {
+        this.urlLogo = urlLogo;
+    }
+
+    public byte getApproved() {
+        return approved;
+    }
+
+    public void setApproved(byte approved) {
+        this.approved = approved;
     }
 
 }

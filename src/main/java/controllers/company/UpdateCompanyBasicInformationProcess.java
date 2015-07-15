@@ -5,12 +5,10 @@ import controllers.application.BaseController;
 import java.io.File;
 import java.util.HashMap;
 import javax.servlet.http.HttpSession;
-import model.beans.PersonBasicInformation;
 import model.logic.Constants;
 import model.util.AffiliateUtil;
 import model.util.ApplicationUtil;
 import model.util.FileUtil;
-import model.util.PersonBasicInformationUtil;
 import model.util.HandlerExceptionUtil;
 import model.util.SessionUtil;
 import org.springframework.stereotype.Controller;
@@ -41,6 +39,7 @@ public class UpdateCompanyBasicInformationProcess extends BaseController {
     @RequestMapping(value = {"/updateCompanyBasicInformationProcess", "updateCompanyBasicInformationProcess"})
     public ModelAndView methodName(
             //@RequestParam("companyId") long companyId,
+            @RequestParam("discountPercentage") byte discountPercentage,
             @RequestParam("name") String name,
             @RequestParam("brand") String brand,
             @RequestParam("person.name") String personName,
@@ -50,6 +49,8 @@ public class UpdateCompanyBasicInformationProcess extends BaseController {
             @RequestParam("person.email") String personEmail,
             @RequestParam("category") String category,
             @RequestParam(value = "logo", required = false) MultipartFile logoMultiPartFile,
+            @RequestParam("website") String website,
+            @RequestParam("facebook") String facebook,
             @RequestParam("description") String description,
             Locale locale) {
 
@@ -62,7 +63,7 @@ public class UpdateCompanyBasicInformationProcess extends BaseController {
         short companyId;
 
         try {
-
+            
             companyId = SessionUtil.getShortParameter(session, "companyId");                        
 
             // transfer file if file is not null
@@ -71,7 +72,9 @@ public class UpdateCompanyBasicInformationProcess extends BaseController {
                 hasLogoFile = true;
             }
             
-            parameters = ApplicationUtil.createParameters(companyId,
+            parameters = ApplicationUtil.createParameters(
+                    discountPercentage,
+                    companyId,
                     name,
                     brand,
                     personName,
@@ -80,6 +83,8 @@ public class UpdateCompanyBasicInformationProcess extends BaseController {
                     personPhone,
                     personEmail,
                     category,
+                    website,
+                    facebook,
                     description                    
             );
 
