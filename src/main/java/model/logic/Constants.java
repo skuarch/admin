@@ -19,7 +19,7 @@ public class Constants {
     public static final int READ_TIMEOUT = 2000;
     public static final int MAX_FILE_SIZE_UPLOAD = 1048576; // 1 mb
     
-    public static final String API_URL = "https://localhost/api-rec";
+    public static final String API_URL = "https://192.168.1.12/api-rec";
     public static final String API_FIRST_VERSION = "/v1";
     public static final String URI_AUTHENTICATION = "/authentication";
     
